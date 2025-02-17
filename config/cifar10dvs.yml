@@ -1,0 +1,50 @@
+# Dataset / Model parameters
+data_dir: /home/kairongyu/datasets/cifar10_dvs
+dataset: cifar10-dvs
+pretrained: False
+num_classes: 10
+img_size: 128
+crop_pct: 1.0
+scale:
+    - 1.0
+    - 1.0
+ratio: [0.2, 1.0]
+color_jitter: 0.
+interpolation: bicubic
+train_interpolation: bicubic
+in_channels: 2
+T: 10
+hflip: 0.5
+model: DctResnet20_LIF
+
+# Model Exponential Moving Average
+model-ema: False
+model-ema-decay: 0.9998
+
+# Misc
+seed: 42
+amp: True
+channels-last: False
+batch_size: 32 #14 #8
+val_batch_size: 32   # 32
+lr: 0.02 #0.01
+min_lr: 1e-5
+sched: cosine
+weight_decay: 1e-4 # 1e-4
+epochs: 500
+cooldown_epochs: 10
+warmup_epochs: 10
+warmup_lr: 1e-5
+opt: sgd # sgd
+smoothing: 0
+workers: 8
+
+dvs_aug: True # modifier
+dvs_trival_aug: True
+mixup: 0.5
+mixup_off_epoch: 0
+# resume: /home/kairongyu/freq_snn/output/train/20240714-105401-DctResnet20_LIF-data-cifar10-dvs-t-16/last.pth.tar
+# TET
+# TET: False
+# TET_means: 1.0
+# TET_lamb: 0.001

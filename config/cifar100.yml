@@ -1,0 +1,26 @@
+data_dir: /home/kairongyu/datasets/cifar100
+dataset: CIFAR100
+model: DctResnet19_LIF
+num_classes: 100
+img_size: 32
+T: 2
+
+seed: 3407
+channels_last: False
+batch_size: 128
+opt: sgd #adam
+opt_eps: 1e-8
+weight_decay: 1e-4
+lr: 0.1 # 3e-4
+min_lr: 1e-5
+sched: cosine #multistep
+decay_rate: 0.1
+decay_milestones: [150, 250, 350, 450]
+
+epochs: 600
+cooldown_epochs: 10
+warmup_lr: 1e-5
+warmup_epochs: 0
+workers: 8
+
+# resume: /home/kairongyu/freq_snn/output/train/20240709-133240-DctResnet19_LIF-data-CIFAR100-t-2/last.pth.tar

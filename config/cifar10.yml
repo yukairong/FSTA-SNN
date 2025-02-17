@@ -1,0 +1,23 @@
+data_dir: /home/kairongyu/datasets/cifar10
+dataset: CIFAR10
+model: DctResnet20_LIF
+num_classes: 10
+img_size: 32
+T: 2
+
+seed: 3407
+channels_last: False
+batch_size: 128
+opt: sgd #adam
+opt_eps: 1e-8
+weight_decay: 0
+lr: 0.1 # 3e-4
+min_lr: 1e-5
+sched: cosine
+epochs: 600
+cooldown_epochs: 10
+warmup_lr: 1e-5
+warmup_epochs: 10
+workers: 8
+
+# resume: /home/kairongyu/freq_snn/output/train/20240716-000730-DctResnet20_LIF-data-CIFAR10-t-4/last.pth.tar
